@@ -6,7 +6,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "deploy:frontend:prod": "nx run frontend:build:production --baseHref=/apps/frontend && gh-pages -d dist/"
+    "buid-prod": "nx run frontend:build:production --baseHref=/games/apps/frontend/",
+    "publish": "gh-pages -d dist -f"
   },
   "private": true,
   "dependencies": {
@@ -50,7 +51,7 @@
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.23.1",
     "eslint-plugin-react-hooks": "4.2.0",
-    "ghpages": "^0.0.10",
+    "gh-pages": "^3.2.3",
     "jest": "27.0.3",
     "prettier": "^2.3.1",
     "ts-jest": "27.0.3",
