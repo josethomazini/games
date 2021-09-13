@@ -1,6 +1,57 @@
 {
   "version": 2,
   "projects": {
+    "falling-stars": {
+      "root": "apps/falling-stars",
+      "sourceRoot": "apps/falling-stars/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/falling-stars",
+            "main": "apps/falling-stars/src/main.ts",
+            "tsConfig": "apps/falling-stars/tsconfig.app.json",
+            "assets": ["apps/falling-stars/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/falling-stars/src/environments/environment.ts",
+                  "with": "apps/falling-stars/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "falling-stars:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/falling-stars/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/falling-stars"],
+          "options": {
+            "jestConfig": "apps/falling-stars/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "frontend": {
       "root": "apps/frontend",
       "sourceRoot": "apps/frontend/src",
