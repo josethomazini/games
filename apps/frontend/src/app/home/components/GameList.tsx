@@ -62,7 +62,11 @@ const GameList: React.FC = () => {
             key={curGameData.key}
             className="game-card"
             onClick={() => {
-              history.push(`/${curGameData.key}`);
+              if (process.env.NODE_ENV === 'production') {
+                history.push(`/games/apps/frontend/${curGameData.key}`);
+              } else {
+                history.push(`/${curGameData.key}`);
+              }
             }}
           >
 

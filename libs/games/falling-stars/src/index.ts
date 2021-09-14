@@ -10,4 +10,8 @@ const fallingStars: IGame = {
   callable: startGame,
 };
 
+if (process.env.NODE_ENV === 'production') {
+  fallingStars.thumb = `/games/apps/frontend${fallingStars.thumb}`;
+}
+
 export default fallingStars;

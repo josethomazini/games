@@ -1,5 +1,11 @@
 import Phaser from 'phaser';
 
+let basePath = '/assets';
+
+if (process.env.NODE_ENV === 'production') {
+  basePath = `/games/apps/frontend${basePath}`;
+}
+
 export default function PreloadSceneFactory(data: any, postScene: string) {
   return class PreloadScene extends Phaser.Scene {
     constructor() {
@@ -21,7 +27,7 @@ export default function PreloadSceneFactory(data: any, postScene: string) {
       for (let index = 0; index < keys.length; index += 1) {
         const name = keys[index];
         this.load.audio(
-          name, `/assets/${data.key}/sounds/${data.assets.audio[name].file}`,
+          name, `${basePath}/${data.key}/audio/${data.assets.audio[name].file}`,
         );
       }
     }
@@ -32,7 +38,7 @@ export default function PreloadSceneFactory(data: any, postScene: string) {
       for (let index = 0; index < keys.length; index += 1) {
         const name = keys[index];
         this.load.image(
-          name, `/assets/${data.key}/images/${data.assets.images[name].file}`,
+          name, `${basePath}/${data.key}/images/${data.assets.images[name].file}`,
         );
       }
     }

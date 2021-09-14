@@ -15,8 +15,8 @@ function compare(a: IGame, b: IGame) {
 
 const getGameData = () => gameData.sort(compare);
 
-export function getDataByUrl(url: string): IGame {
-  const key = url.replace('/', '');
+export function getDataByRoute(path: string): IGame|null {
+  const key = path.replace('/games/apps/frontend/', '').replace('/', '');
 
   for (let index = 0; index < gameData.length; index += 1) {
     const element = gameData[index];
@@ -25,7 +25,7 @@ export function getDataByUrl(url: string): IGame {
       return element;
     }
   }
-  throw new Error(`Illegal key: ${key}`);
+  return null;
 }
 
 export default getGameData;
