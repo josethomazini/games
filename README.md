@@ -2,6 +2,8 @@
 
 [Play](https://josethomazini.github.io/games/apps/frontend/)
 
+Whenever adding a new game update workspace.json adding the game's assets folder at the frontend build target configs.
+
 This project was generated using [Nx](https://nx.dev).
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>

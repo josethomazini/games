@@ -1,0 +1,47 @@
+{
+  "key": "falling-stars",
+  "name": "Falling Stars",
+  "version": "0.1.0",
+  "thumb": "/assets/falling-stars/snap.png",
+
+  "assets": {
+    "images": {
+      "sky": {
+        "file": "sky.png"
+      },
+      "bomb": {
+        "file": "bomb.png"
+      },
+      "platform": {
+        "file": "platform.png"
+      },
+      "star": {
+        "file": "star.png"
+      }
+    },
+    "audio": {
+      "collectcoin": {
+        "file": "135936__bradwesson__collectcoin.wav"
+      },
+      "boom": {
+        "file": "155235__zangrutz__bomb-small.mp3"
+      },
+      "scream": {
+        "file": "348310__redafs__zombie-monster-scream.wav"
+      },
+      "song": {
+        "file": "Twin Musicom - Epic Battle.mp3"
+      },
+      "jump": {
+        "file": "369515__lefty-studios__jumping-sfx.wav"
+      }
+    },
+    "sprites": {
+      "dude": {
+        "file": "dude.png",
+        "frameWidth": 32,
+        "frameHeight": 39
+      }
+    }
+  }
+}

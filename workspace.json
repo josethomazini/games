@@ -17,7 +17,12 @@
             "tsConfig": "apps/frontend/tsconfig.app.json",
             "assets": [
               "apps/frontend/src/favicon.ico",
-              "apps/frontend/src/assets"
+              "apps/frontend/src/assets",
+              {
+                "input": "libs/games/falling-stars/assets",
+                "glob": "**/*",
+                "output": "/assets/falling-stars"
+              }
             ],
             "styles": [],
             "scripts": [],
@@ -42,7 +47,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "5mb"
                 }
               ]
             }
@@ -101,6 +106,72 @@
           "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": ["apps/frontend-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "game-interface": {
+      "root": "libs/game-interface",
+      "sourceRoot": "libs/game-interface/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/game-interface/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/game-interface"],
+          "options": {
+            "jestConfig": "libs/game-interface/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "games-falling-stars": {
+      "root": "libs/games/falling-stars",
+      "sourceRoot": "libs/games/falling-stars/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/games/falling-stars/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/games/falling-stars"],
+          "options": {
+            "jestConfig": "libs/games/falling-stars/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "preload-scene": {
+      "root": "libs/preload-scene",
+      "sourceRoot": "libs/preload-scene/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/preload-scene/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/preload-scene"],
+          "options": {
+            "jestConfig": "libs/preload-scene/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

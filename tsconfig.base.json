@@ -3,7 +3,9 @@
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
+    "resolveJsonModule": true,
     "declaration": false,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -14,7 +16,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@games/game-interface": ["libs/game-interface/src/index.ts"],
+      "@games/games/falling-stars": ["libs/games/falling-stars/src/index.ts"],
+      "@games/preload-scene": ["libs/preload-scene/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
