@@ -1,7 +1,7 @@
 {
   "npmScope": "games",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "package.json": {
@@ -28,15 +28,21 @@
     ]
   },
   "projects": {
-    "falling-stars": {
-      "tags": []
-    },
     "frontend": {
       "tags": []
     },
     "frontend-e2e": {
       "tags": [],
       "implicitDependencies": ["frontend"]
+    },
+    "game-interface": {
+      "tags": []
+    },
+    "games-falling-stars": {
+      "tags": []
+    },
+    "preload-scene": {
+      "tags": []
     }
   }
 }

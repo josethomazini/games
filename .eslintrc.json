@@ -25,13 +25,16 @@
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript", "airbnb"],
       "rules": {
-        "import/no-extraneous-dependencies": 0,
-        "react/react-in-jsx-scope": 0,
-        "react/jsx-filename-extension": 0,
-        "import/no-unresolved": 0,
-        "import/extensions": 0,
-        "no-use-before-define": 0,
-        "@typescript-eslint/no-explicit-any": 0
+        "import/no-extraneous-dependencies": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "consistent-return": "off",
+        "class-methods-use-this": "off",
+        "import/prefer-default-export": "off"
       }
     },
     {
