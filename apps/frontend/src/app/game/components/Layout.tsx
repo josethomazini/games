@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { getDataByUrl } from '../../../GameData';
+import { getDataByRoute } from '../../../GameData';
 import GameArea from './GameArea';
 import Header from './Header';
 
@@ -17,15 +17,22 @@ const Grid = styled.div`
 
 const Layout: React.FC = () => {
   const location = useLocation();
-  const element = getDataByUrl(location.pathname);
+  const element = getDataByRoute(location.pathname);
+  let name = '';
+
+  if (element) {
+    name = element.name;
+  }
 
   useEffect(() => {
-    element.callable();
+    if (element) {
+      element.callable();
+    }
   });
 
   return (
     <Grid>
-      <Header name={`${element.name}`} />
+      <Header name={`${name}`} />
       <GameArea />
     </Grid>
   );
