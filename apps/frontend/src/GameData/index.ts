@@ -1,3 +1,4 @@
+import getBaseUrl from '@games/base-url';
 import { IGame } from '@games/game-interface';
 import fallingStars from '@games/games/falling-stars';
 
@@ -15,8 +16,8 @@ function compare(a: IGame, b: IGame) {
 
 const getGameData = () => gameData.sort(compare);
 
-export function getDataByRoute(path: string): IGame|null {
-  const key = path.replace('/games/apps/frontend/', '').replace('/', '');
+export function getDataByRoute(path: string): IGame {
+  const key = path.replace(getBaseUrl(), '');
 
   for (let index = 0; index < gameData.length; index += 1) {
     const element = gameData[index];
@@ -25,7 +26,7 @@ export function getDataByRoute(path: string): IGame|null {
       return element;
     }
   }
-  return null;
+  throw new Error(`Illegal key: ${key}`);
 }
 
 export default getGameData;

@@ -1,8 +1,8 @@
 {
   "key": "falling-stars",
   "name": "Falling Stars",
-  "version": "0.1.0",
-  "thumb": "/assets/falling-stars/snap.png",
+  "version": "0.1.1",
+  "thumb": "assets/falling-stars/snap.png",
 
   "assets": {
     "images": {

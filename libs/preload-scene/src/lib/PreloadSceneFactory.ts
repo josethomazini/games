@@ -1,10 +1,7 @@
+import getBaseurl from '@games/base-url';
 import Phaser from 'phaser';
 
-let basePath = '/assets';
-
-if (process.env.NODE_ENV === 'production') {
-  basePath = `/games/apps/frontend${basePath}`;
-}
+const basePath = `${getBaseurl()}assets`;
 
 export default function PreloadSceneFactory(data: any, postScene: string) {
   return class PreloadScene extends Phaser.Scene {

@@ -1,6 +1,28 @@
 {
   "version": 2,
   "projects": {
+    "base-url": {
+      "root": "libs/base-url",
+      "sourceRoot": "libs/base-url/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/base-url/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/base-url"],
+          "options": {
+            "jestConfig": "libs/base-url/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "frontend": {
       "root": "apps/frontend",
       "sourceRoot": "apps/frontend/src",
