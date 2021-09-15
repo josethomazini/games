@@ -7,7 +7,8 @@
     "build": "nx build",
     "test": "nx test",
     "build-prod": "nx run frontend:build:production --baseHref=/games/apps/frontend/",
-    "publish": "gh-pages -d dist -f"
+    "publish": "gh-pages -d dist -f",
+    "find:todos": "leasot {apps,libs}/**/*.{js,ts,jsx,tsx}"
   },
   "private": true,
   "dependencies": {
@@ -58,6 +59,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "gh-pages": "^3.2.3",
     "jest": "27.0.3",
+    "leasot": "^12.0.0",
     "prettier": "^2.3.1",
     "ts-jest": "27.0.3",
     "typescript": "~4.3.5"
