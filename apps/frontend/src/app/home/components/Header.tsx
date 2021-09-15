@@ -15,11 +15,9 @@ const Container = styled.div`
 `;
 
 const Header: React.FC = () => (
-  <>
-    <Container>
-      <h1>GAMES</h1>
-    </Container>
-  </>
+  <Container>
+    <h1>GAMES</h1>
+  </Container>
 );
 
 export default Header;

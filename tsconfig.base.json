@@ -4,6 +4,7 @@
     "rootDir": ".",
     "sourceMap": true,
     "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
     "declaration": false,
     "esModuleInterop": true,
     "moduleResolution": "node",
@@ -20,7 +21,8 @@
       "@games/base-url": ["libs/base-url/src/index.ts"],
       "@games/game-interface": ["libs/game-interface/src/index.ts"],
       "@games/games/falling-stars": ["libs/games/falling-stars/src/index.ts"],
-      "@games/preload-scene": ["libs/preload-scene/src/index.ts"]
+      "@games/preload-scene": ["libs/preload-scene/src/index.ts"],
+      "@games/sound-manager": ["libs/sound-manager/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

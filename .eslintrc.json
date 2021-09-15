@@ -23,18 +23,18 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript", "airbnb"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
       "rules": {
-        "import/no-extraneous-dependencies": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/jsx-filename-extension": "off",
-        "import/no-unresolved": "off",
-        "import/extensions": "off",
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "consistent-return": "off",
-        "class-methods-use-this": "off",
-        "import/prefer-default-export": "off"
+        // "import/no-extraneous-dependencies": "off",
+        // "react/react-in-jsx-scope": "off",
+        // "react/jsx-filename-extension": "off",
+        // "import/no-unresolved": "off",
+        // "import/extensions": "off",
+        // "no-use-before-define": "off",
+        // "@typescript-eslint/no-explicit-any": "off",
+        // "consistent-return": "off",
+        // "class-methods-use-this": "off",
+        // "import/prefer-default-export": "off"
       }
     },
     {

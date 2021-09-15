@@ -46,6 +46,9 @@
     },
     "preload-scene": {
       "tags": []
+    },
+    "sound-manager": {
+      "tags": []
     }
   }
 }

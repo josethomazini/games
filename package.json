@@ -7,6 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "build-prod": "nx run frontend:build:production --baseHref=/games/apps/frontend/",
+    "dev": "nx run frontend:serve",
     "publish": "gh-pages -d dist -f",
     "find:todos": "leasot {apps,libs}/**/*.{js,ts,jsx,tsx}"
   },

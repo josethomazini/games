@@ -41,6 +41,11 @@
         "file": "dude.png",
         "frameWidth": 32,
         "frameHeight": 39
+      },
+      "explosion": {
+        "file": "explosion.png",
+        "frameWidth": 16,
+        "frameHeight": 16
       }
     }
   }
