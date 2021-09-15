@@ -1,3 +1,4 @@
+import getBaseUrl from '@games/base-url';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -62,11 +63,7 @@ const GameList: React.FC = () => {
             key={curGameData.key}
             className="game-card"
             onClick={() => {
-              if (process.env.NODE_ENV === 'production') {
-                history.push(`/games/apps/frontend/${curGameData.key}`);
-              } else {
-                history.push(`/${curGameData.key}`);
-              }
+              history.push(`${getBaseUrl()}${curGameData.key}`);
             }}
           >
 

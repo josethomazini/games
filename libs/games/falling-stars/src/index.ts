@@ -1,3 +1,4 @@
+import getBaseurl from '@games/base-url';
 import { IGame } from '@games/game-interface';
 import data from './data.json';
 import startGame from './lib/StartGame';
@@ -10,8 +11,6 @@ const fallingStars: IGame = {
   callable: startGame,
 };
 
-if (process.env.NODE_ENV === 'production') {
-  fallingStars.thumb = `/games/apps/frontend${fallingStars.thumb}`;
-}
+fallingStars.thumb = `${getBaseurl()}${fallingStars.thumb}`;
 
 export default fallingStars;

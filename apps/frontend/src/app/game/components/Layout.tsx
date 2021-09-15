@@ -18,21 +18,14 @@ const Grid = styled.div`
 const Layout: React.FC = () => {
   const location = useLocation();
   const element = getDataByRoute(location.pathname);
-  let name = '';
-
-  if (element) {
-    name = element.name;
-  }
 
   useEffect(() => {
-    if (element) {
-      element.callable();
-    }
+    element.callable();
   });
 
   return (
     <Grid>
-      <Header name={`${name}`} />
+      <Header name={`${element.name}`} />
       <GameArea />
     </Grid>
   );
