@@ -1,5 +1,6 @@
 import { getSoundManager, ISoundManager } from '@games/sound-manager';
 import Phaser from 'phaser';
+import styles from '../styles';
 
 export default class AnotherScene extends Phaser.Scene {
   soundManager: ISoundManager;
@@ -15,6 +16,8 @@ export default class AnotherScene extends Phaser.Scene {
     function sleep(ms: number) {
       return new Promise((resolve) => setTimeout(resolve, ms));
     }
+
+    this.add.text(50, 50, 'Hello World!', styles.title)
 
     await sleep(5000);
 

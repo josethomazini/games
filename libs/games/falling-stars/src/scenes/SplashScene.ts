@@ -1,5 +1,6 @@
 import { getSoundManager, ISoundManager } from '@games/sound-manager';
 import Phaser from 'phaser';
+import styles from '../styles';
 
 export default class SplashScene extends Phaser.Scene {
   soundManager: ISoundManager;
@@ -20,6 +21,7 @@ export default class SplashScene extends Phaser.Scene {
     function sleep(ms: number) {
       return new Promise((resolve) => setTimeout(resolve, ms));
     }
+    this.add.text(50, 50, 'Hello World!', styles.title2)
 
     await sleep(5000);
 
