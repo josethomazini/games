@@ -5,7 +5,7 @@ import WebFontLoader from 'webfontloader'
 export default class WebFontFile extends Phaser.Loader.File {
   fontNames: any[]
 
-  constructor(loader, fontNames) {
+  constructor(loader: Phaser.Loader.LoaderPlugin, fontNames: any) {
     super(loader, {
       type: 'webfont',
       key: fontNames.toString()
