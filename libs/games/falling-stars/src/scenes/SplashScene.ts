@@ -1,9 +1,11 @@
+import PrintMouseCoords from '@games/print-mouse-coords';
 import { getSoundManager, ISoundManager } from '@games/sound-manager';
 import Phaser from 'phaser';
 import styles from '../styles';
 
 export default class SplashScene extends Phaser.Scene {
   soundManager: ISoundManager;
+  mouseCoords: PrintMouseCoords;
 
   constructor() {
     super('SPLASH_SCENE');
@@ -11,6 +13,7 @@ export default class SplashScene extends Phaser.Scene {
   }
 
   async create() {
+    this.mouseCoords = new PrintMouseCoords(this, '#0000ff')
 
     this.soundManager.load('boom', true);
     this.soundManager.setVolume('boom', 1);
@@ -26,5 +29,9 @@ export default class SplashScene extends Phaser.Scene {
     await sleep(5000);
 
     this.scene.start('ANOTHER_SCENE');
+  }
+
+  update() {
+    this.mouseCoords.update();
   }
 }

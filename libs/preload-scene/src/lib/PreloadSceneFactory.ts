@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
-import { Asset, loadAssetsByType } from './AssetsLoader';
+import EventHandler from './EventHandler';
+import { Asset, loadAssetsByType } from './EventHandler/AssetsLoader';
 import WebFontFile from './WebFontLoader';
 
 export default function PreloadSceneFactory(data: any, postScene: string) {
@@ -9,6 +10,8 @@ export default function PreloadSceneFactory(data: any, postScene: string) {
     }
 
     preload() {
+      new EventHandler(this);
+
       loadAssetsByType(this, data, Asset.images);
       loadAssetsByType(this, data, Asset.audio);
       loadAssetsByType(this, data, Asset.sprites);

@@ -47,6 +47,9 @@
     "preload-scene": {
       "tags": []
     },
+    "print-mouse-coords": {
+      "tags": []
+    },
     "sound-manager": {
       "tags": []
     }

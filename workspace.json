@@ -198,6 +198,27 @@
         }
       }
     },
+    "print-mouse-coords": {
+      "root": "libs/print-mouse-coords",
+      "sourceRoot": "libs/print-mouse-coords/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/print-mouse-coords/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/print-mouse-coords"],
+          "options": {
+            "jestConfig": "libs/print-mouse-coords/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "sound-manager": {
       "root": "libs/sound-manager",
       "sourceRoot": "libs/sound-manager/src",
