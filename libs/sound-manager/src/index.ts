@@ -1,5 +1,5 @@
-import { getSoundManager, ISoundManager } from './lib/SoundManager';
+import { createSoundManager, getSoundManager } from './lib/SoundManager';
 
 export {
-  ISoundManager, getSoundManager
+  createSoundManager, getSoundManager
 };

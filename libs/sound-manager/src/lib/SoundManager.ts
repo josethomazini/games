@@ -1,19 +1,15 @@
 import Phaser from 'phaser';
 
-export interface ISoundManager {
-  load(key: string, loop: boolean): void;
-  play(key: string): void;
-  stop(key: string): void;
-  setVolume(key: string, value: number): void;
-}
-
-class SoundManager implements ISoundManager {
+class SoundManager {
   private sounds: Record<string, Phaser.Sound.HTML5AudioSound|Phaser.Sound.BaseSound>;
 
   private scene: Phaser.Scene;
 
+  private playing: Record<string, boolean>;
+
   constructor(scene: Phaser.Scene) {
     this.sounds = {};
+    this.playing = {};
     this.scene = scene;
   }
 
@@ -28,23 +24,40 @@ class SoundManager implements ISoundManager {
   }
 
   play(key: string) {
+    if (this.sounds[key] === undefined) {
+      throw Error(`Sound ${key} wasn't loaded`)
+    }
     this.sounds[key].play();
   }
 
   stop(key: string) {
+    if (this.sounds[key] === undefined) {
+      throw Error(`Sound ${key} wasn't loaded`)
+    }
     this.sounds[key].stop();
   }
 
   setVolume(key: string, value: number) {
+    if (this.sounds[key] === undefined) {
+      throw Error(`Sound ${key} wasn't loaded`)
+    };
     (<Phaser.Sound.HTML5AudioSound>this.sounds[key]).setVolume(value);
   }
 }
 
-let soundManager: ISoundManager;
+let soundManager: SoundManager;
 
-export function getSoundManager(scene: Phaser.Scene) {
+export function createSoundManager(scene: Phaser.Scene): any {
+  if(soundManager !== undefined) {
+    throw Error('The sound manager was already created');
+  }
+  soundManager = new SoundManager(scene);
+  return soundManager;
+}
+
+export function getSoundManager() {
   if (soundManager === undefined) {
-    soundManager = new SoundManager(scene);
+    throw Error('The sound manager wasn\'t started');
   }
   return soundManager;
 }
