@@ -6,8 +6,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 14px;
-  background-color: blue;
+  padding-top: 5px;
+  background-color: var(--quaternary);
   color: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
   z-index: 2;
@@ -22,11 +22,9 @@ const Header: React.FC<Props> = (
   // eslint-disable-next-line react/prop-types
   { name },
 ) => (
-  <>
-    <Container>
+  <Container>
       <h1>{name}</h1>
     </Container>
-  </>
 );
 
 export default Header;

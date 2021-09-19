@@ -18,7 +18,7 @@ const Container = styled.div`
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
   z-index: 2;
   overflow-y: scroll;
-  max-height: calc(100vh - 70px - 70px);
+  max-height: calc(100vh - 70px - 50px);
   padding: 20px 0;
 
   ::-webkit-scrollbar {

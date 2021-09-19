@@ -6,9 +6,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--tertiary);
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
   z-index: 2;
-  max-height: calc(100vh - 70px);
+  max-height: calc(100vh - 50px);
   overflow-y: scroll;
 
   ::-webkit-scrollbar {
