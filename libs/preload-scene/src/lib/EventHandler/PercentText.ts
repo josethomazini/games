@@ -1,5 +1,7 @@
+import Phaser from "phaser";
 export default class PercentText {
-  constructor(scene) {
+  text: any;
+  constructor(scene: Phaser.Scene) {
     const { width, height } = scene.cameras.main;
 
     const config = {
@@ -16,8 +18,8 @@ export default class PercentText {
     this.text.setOrigin(0.5, 0.5);
   }
 
-  progressed(value) {
-    const txt = `${parseInt(value * 100, 10)}%`;
+  progressed(value: number) {
+    const txt = `${parseInt(String(value * 100), 10)}%`;
     this.text.setText(txt);
   }
 

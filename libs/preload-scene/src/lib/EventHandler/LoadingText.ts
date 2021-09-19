@@ -1,6 +1,7 @@
+import Phaser from "phaser";
 export default class LoadingText {
   text: any;
-  constructor(scene) {
+  constructor(scene: Phaser.Scene) {
     const { width, height } = scene.cameras.main;
 
     const config = {

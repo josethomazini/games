@@ -1,6 +1,7 @@
+import Phaser from "phaser";
 export default class AssertText {
   text: any;
-  constructor(scene) {
+  constructor(scene: Phaser.Scene) {
     const { width, height } = scene.cameras.main;
 
     const config = {
@@ -17,7 +18,7 @@ export default class AssertText {
     this.text.setOrigin(0.5, 0.5);
   }
 
-  fileProgressed(file) {
+  fileProgressed(file: any) {
     const txt = `Loading asset: ${file.key}`;
     this.text.setText(txt);
   }

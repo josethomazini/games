@@ -1,10 +1,11 @@
+import Phaser from "phaser";
 export default class ProgressBar {
   bar: any;
-  constructor(scene) {
+  constructor(scene: Phaser.Scene) {
     this.bar = scene.add.graphics();
   }
 
-  progressed(value) {
+  progressed(value: number) {
     this.bar.clear();
     this.bar.fillStyle(0xffffff, 1);
     this.bar.fillRect(250, 280, 300 * value, 30);
