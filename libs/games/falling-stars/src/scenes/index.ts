@@ -1,11 +1,17 @@
-import PreloadSceneFactory from '@games/preload-scene';
+import { PreloadSceneFactory } from "@games/preload-scene";
 import data from '../data.json';
-import AnotherScene from './AnotherScene';
-import SplashScene from './SplashScene';
+import PlatformScene from './PlatformScene';
+import SplashScene from "./SplashScene";
+import GlobalsScene from "./StartGlobalsScene";
+
+const PreloadScene = PreloadSceneFactory(data, 'start-globals-scene')
 
 const scenes = [
-  PreloadSceneFactory(data, 'SPLASH_SCENE'),
-  SplashScene, AnotherScene,
-];
+  PreloadScene,
+  GlobalsScene,
+  SplashScene,
+  PlatformScene
+]
 
-export default scenes;
+
+export default scenes
