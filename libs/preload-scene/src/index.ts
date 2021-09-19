@@ -1,3 +1,4 @@
+import Globals from './lib/Globals';
 import PreloadSceneFactory from './lib/PreloadSceneFactory';
 
-export default PreloadSceneFactory;
+export { PreloadSceneFactory, Globals };
