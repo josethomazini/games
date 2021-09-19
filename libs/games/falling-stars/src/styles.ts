@@ -4,9 +4,15 @@ export default {
     fill: 'yellow'
   },
 
-  title2: {
+  splashTitle: {
     fontFamily: '"Press Start 2P"',
-    fontSize: '10px',
-    fill: 'white'
+    fontSize: '50px',
+    fill: 'yellow'
+  },
+
+  splashMenuItem: {
+    fontFamily: '"Press Start 2P"',
+    fontSize: '25px',
+    fill: 'blue'
   }
 };

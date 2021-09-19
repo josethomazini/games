@@ -3,6 +3,7 @@
   "name": "Falling Stars",
   "version": "0.1.2",
   "thumb": "assets/falling-stars/snap.png",
+  "webFont": "Press Start 2P",
 
   "assets": {
     "images": {
