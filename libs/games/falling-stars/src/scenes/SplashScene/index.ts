@@ -1,61 +1,39 @@
 import PrintMouseCoords from '@games/print-mouse-coords';
 import Phaser from 'phaser';
-import data from '../../data.json';
-import styles from '../../styles';
+import Background from './components/Background';
 import MediaPlayer from './components/MediaPlayer';
+import Menu from './components/Menu';
+import Title from './components/Title';
 
 export default class SplashScene extends Phaser.Scene {
   mouseCoords: PrintMouseCoords;
-  songPlaying: boolean;
-  soundManager: any
-
+  menu: any
 
   constructor() {
     super('splash-scene');
-
-    this.songPlaying = false;
-    this.mouseCoords = new PrintMouseCoords(this, '#0000ff')
   }
 
-  private drawBackground() {
-    this.add.image(400, 300, 'sky')
-  }
-
-  private drawTitle() {
-    this.add.text(70, 100, data.name, styles.splashTitle)
-  }
-
-  private drawMenu() {
-    this.add.text(350, 300, 'Play', styles.splashMenuItem)
-    this.add.text(320, 400, 'Credits', styles.splashMenuItem)
-  }
-
-  private draw() {
-    this.drawBackground();
-    this.drawTitle();
-    this.drawMenu();
-  }
-
-
-
-  async create() {
-    this.mouseCoords.create()
+  create() {
+    this.mouseCoords = new PrintMouseCoords(this, '#00ffff', true)
     MediaPlayer.playBackgroundSound();
-    this.draw()
+    new Background(this)
+    new Title(this)
+    this.menu = new Menu(this)
 
 
 
 
 
-    function sleep(ms: number) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-    }
-    await sleep(5000);
+    // function sleep(ms: number) {
+      //   return new Promise((resolve) => setTimeout(resolve, ms));
+      // }
+      // await sleep(5000);
 
-    this.scene.start('platform-scene');
+    // this.scene.start('platform-scene');
   }
 
   update() {
     this.mouseCoords.update();
+    this.menu.update()
   }
 }
