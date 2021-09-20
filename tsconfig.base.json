@@ -18,10 +18,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@games/base-menu": ["libs/base-menu/src/index.ts"],
       "@games/base-url": ["libs/base-url/src/index.ts"],
-      "@games/logger": ["libs/logger/src/index.ts"],
       "@games/game-interface": ["libs/game-interface/src/index.ts"],
       "@games/games/falling-stars": ["libs/games/falling-stars/src/index.ts"],
+      "@games/logger": ["libs/logger/src/index.ts"],
       "@games/preload-scene": ["libs/preload-scene/src/index.ts"],
       "@games/print-mouse-coords": ["libs/print-mouse-coords/src/index.ts"],
       "@games/sound-manager": ["libs/sound-manager/src/index.ts"]

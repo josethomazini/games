@@ -28,10 +28,10 @@
     ]
   },
   "projects": {
-    "base-url": {
+    "base-menu": {
       "tags": []
     },
-    "logger": {
+    "base-url": {
       "tags": []
     },
     "frontend": {
@@ -45,6 +45,9 @@
       "tags": []
     },
     "games-falling-stars": {
+      "tags": []
+    },
+    "logger": {
       "tags": []
     },
     "preload-scene": {

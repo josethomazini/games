@@ -1,6 +1,27 @@
 {
   "version": 2,
   "projects": {
+    "base-menu": {
+      "root": "libs/base-menu",
+      "sourceRoot": "libs/base-menu/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/base-menu/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/base-menu"],
+          "options": {
+            "jestConfig": "libs/base-menu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "base-url": {
       "root": "libs/base-url",
       "sourceRoot": "libs/base-url/src",
@@ -18,27 +39,6 @@
           "outputs": ["coverage/libs/base-url"],
           "options": {
             "jestConfig": "libs/base-url/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "logger": {
-      "root": "libs/logger",
-      "sourceRoot": "libs/logger/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/logger/**/*.ts"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/logger"],
-          "options": {
-            "jestConfig": "libs/logger/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -192,6 +192,27 @@
           "outputs": ["coverage/libs/games/falling-stars"],
           "options": {
             "jestConfig": "libs/games/falling-stars/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "logger": {
+      "root": "libs/logger",
+      "sourceRoot": "libs/logger/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/logger/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/logger"],
+          "options": {
+            "jestConfig": "libs/logger/jest.config.js",
             "passWithNoTests": true
           }
         }
